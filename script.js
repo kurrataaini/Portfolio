@@ -4,11 +4,11 @@ function validateForm() {
     const message = document.getElementById("message").value.trim();
   
     if (!name || !email || !message) {
-      alert("Please fill out all fields.");
+      alert("Please fill in all fields.");
       return false;
     }
   
-    alert("Message sent successfully!");
+    alert("Message sent! (simulation only)");
     return true;
   }
   
