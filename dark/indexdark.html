@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tata's Portfolio</title>
+  <link rel="stylesheet" href="styledark.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Tata's Portfolio</h1>
+    <button id="theme-toggle">🌙 Dark Mode</button>
+  </header>
+
+  <main>
+    <section class="intro" data-aos="fade-up">
+      <p>Hello! I'm Tata, a Data Analyst & aspiring Data Scientist.</p>
+    </section>
+
+    <section class="filters" data-aos="fade-up">
+      <button class="filter-btn" data-category="all">All</button>
+      <button class="filter-btn" data-category="data-science">Data Science</button>
+      <button class="filter-btn" data-category="ml">Machine Learning</button>
+      <button class="filter-btn" data-category="viz">Visualization</button>
+    </section>
+
+    <section class="projects">
+      <div class="card" data-category="data-science" data-aos="zoom-in">
+        <h3>Retail Sales Analysis</h3>
+        <p>Exploratory Data Analysis on retail sales data using Python.</p>
+      </div>
+      <div class="card" data-category="ml" data-aos="zoom-in">
+        <h3>Fish Freshness Classification</h3>
+        <p>CNN Model to classify fish freshness using image data.</p>
+      </div>
+      <div class="card" data-category="viz" data-aos="zoom-in">
+        <h3>Dashboard in Power BI</h3>
+        <p>Interactive dashboards for business insights.</p>
+      </div>
+      <div class="card" data-category="ml" data-aos="zoom-in">
+        <h3>Student Score Prediction</h3>
+        <p>Predicting student performance using regression models.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Tata. All rights reserved.</p>
+  </footer>
+
+  <script src="scriptdark.js"></script>
+</body>
+</html>

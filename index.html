@@ -3,90 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tata | Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <title>Tata's Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 p-6">
 
-  <header class="bg-primary text-white text-center py-5">
-    <h1 class="display-4">Tata</h1>
-    <p class="lead">Data Analyst & Aspiring Data Scientist</p>
-    <a href="CV_Tata.pdf" class="btn btn-light mt-3" download>📄 Download CV</a>
+  <header class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-bold">Tata's Portfolio</h1>
+    <button class="bg-gray-200 px-4 py-2 rounded">🌙 Dark Mode</button>
   </header>
 
-  <main class="container my-5">
+  <section class="text-center mb-8">
+    <p class="text-lg">Hello! I'm Tata, a <strong>Data Analyst</strong> & aspiring <strong>Data Scientist</strong>.</p>
+  </section>
 
-    <section>
-      <h2 class="mb-4">Projects</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Retail Sales EDA</h5>
-              <p class="card-text">Exploratory data analysis to uncover sales trends & patterns.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Fish Freshness CNN</h5>
-              <p class="card-text">Image classification model to predict fish freshness.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Power BI Dashboard</h5>
-              <p class="card-text">Interactive visualization dashboard for business insights.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <section class="flex justify-center gap-4 mb-6">
+    <button class="bg-blue-500 text-white px-4 py-2 rounded">All</button>
+    <button class="bg-gray-300 px-4 py-2 rounded">Data Science</button>
+    <button class="bg-gray-300 px-4 py-2 rounded">Machine Learning</button>
+    <button class="bg-gray-300 px-4 py-2 rounded">Visualization</button>
+  </section>
 
-    <section class="mt-5">
-      <h2 class="mb-4">Skills</h2>
-      <div>
-        <p>Python</p>
-        <div class="progress mb-3">
-          <div class="progress-bar" style="width: 85%">85%</div>
-        </div>
-        <p>SQL</p>
-        <div class="progress mb-3">
-          <div class="progress-bar bg-success" style="width: 75%">75%</div>
-        </div>
-        <p>Power BI</p>
-        <div class="progress mb-3">
-          <div class="progress-bar bg-info" style="width: 70%">70%</div>
-        </div>
-      </div>
-    </section>
+  <section class="grid gap-6 md:grid-cols-2">
+    <div class="bg-white p-4 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold">Retail Sales Analysis</h3>
+      <p>Exploratory Data Analysis on retail sales data using Python.</p>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold">Fish Freshness Classification</h3>
+      <p>CNN model to classify fish freshness using image data.</p>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold">Dashboard in Power BI</h3>
+      <p>Interactive dashboards for business insights.</p>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold">Student Score Prediction</h3>
+      <p>Predicting student performance using regression models.</p>
+    </div>
+  </section>
 
-    <section class="mt-5">
-      <h2 class="mb-4">Contact Me</h2>
-      <form onsubmit="return validateForm()">
-        <div class="mb-3">
-          <input type="text" id="name" class="form-control" placeholder="Your Name" />
-        </div>
-        <div class="mb-3">
-          <input type="email" id="email" class="form-control" placeholder="Your Email" />
-        </div>
-        <div class="mb-3">
-          <textarea id="message" class="form-control" rows="3" placeholder="Your Message"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Send</button>
-      </form>
-    </section>
-
-  </main>
-
-  <footer class="text-center text-muted py-4">
-    &copy; 2025 Tata. All rights reserved.
+  <footer class="text-center mt-10 text-sm text-gray-500">
+    &copy; <span id="year"></span> Tata. All rights reserved.
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
