@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Details - Drug Repurposing</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    #imgModal {
+      transition: opacity 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <div class="max-w-4xl mx-auto py-12 px-4">
+    <h1 class="text-3xl font-bold mb-4">Drug Repurposing for COVID-19 using Text Mining and Clustering</h1>
+    <p class="mb-6 text-lg">
+      In this project, we conducted a <strong>drug repurposing study for COVID-19</strong> by applying text mining techniques to abstracts of scientific papers containing chemical-related information. We used the <strong>CORD-19 dataset</strong> to collect all abstracts, then performed a series of <strong>data cleaning steps</strong>, including removing blank and duplicate entries, and filtering out entries with missing abstracts by checking DOIs.
+    </p>
+    <p class="mb-6 text-lg">
+      Next, we applied <strong>Drug Named Entity Recognition (DNER)</strong> using the <strong>PubTator API</strong> from NCBI to extract drug names from each abstract. Abstracts containing chemical entities were selected for further analysis.
+    </p>
+    <p class="mb-6 text-lg">
+      We then proceeded with <strong>text preprocessing</strong>, which included case folding, removing punctuation, stopword removal, number removal, stemming, and transforming the text using <strong>TF-IDF</strong> vectorization.
+    </p>
+    <p class="mb-6 text-lg">
+      For pattern discovery, we applied <strong>K-Means clustering</strong> to group similar abstracts. After clustering, we performed <strong>manual labeling into four classes</strong> and validated the results by comparing them with data from <strong>DrugBank</strong>. Finally, we used <strong>Principal Component Analysis (PCA)</strong> to visualize the clustering results.
+    </p>
+    <section class="mt-12">
+        <h2 class="text-2xl font-semibold mb-4">🖼️ Project Documentation</h2>
+        <p class="text-gray-600 mb-6">Here are some screenshots or visualizations related to the process and results of this project.</p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <img src="proses.png" alt="Documentation 1" class="rounded-lg shadow-md cursor-pointer" onclick="openModal(this)">
+          <img src="labeling.png" alt="Documentation 2" class="rounded-lg shadow-md cursor-pointer" onclick="openModal(this)">
+          <img src="cluster.png" alt="Documentation 3" class="rounded-lg shadow-md cursor-pointer" onclick="openModal(this)">
+          <!-- Tambahkan lagi jika butuh -->
+        </div>
+    </section>
+      
+    <!-- Modal -->
+    <div id="imgModal" class="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center hidden z-50" onclick="closeModal()">
+        <img id="modalImage" class="max-w-full max-h-full rounded-lg border-4 border-white">
+    </div>
+    <a href="index2.html" class="inline-block mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">Back to Portfolio</a>
+  </div>
+
+  <!-- Script Modal -->
+  <script>
+    function openModal(img) {
+      const modal = document.getElementById("imgModal");
+      const modalImg = document.getElementById("modalImage");
+      modalImg.src = img.src;
+      modal.classList.remove("hidden");
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("imgModal");
+      modal.classList.add("hidden");
+    }
+  </script>
+  
+</body>
+</html>
