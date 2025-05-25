@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project Detail - Fish Freshness</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    #imgModal {
+      transition: opacity 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <div class="max-w-4xl mx-auto py-12 px-4">
+    <h1 class="text-3xl font-bold mb-4">Fish Freshness Classification using ResNet50</h1>
+    <p class="mb-6 text-lg">
+      This research focuses on <strong>identifying the freshness of tilapia fish</strong> using Convolutional Neural Network <strong>(CNN)</strong>, specifically the <strong>ResNet50</strong> architecture.
+      Data collection involved gathering images of tilapia fish across four days, where <strong>Day 1</strong> is considered fresh and <strong>Days 2, 3, and 4</strong> are considered not fresh.
+      <br><br>
+      During the preprocessing stage, <strong>data augmentation</strong> was applied including rotation and brightness adjustments, resulting in 1600 images, which were split into training, validation, and testing datasets with a ratio of 70:20:10.
+      <br><br>
+      The ResNet50 model was enhanced with <strong>dropout layers</strong>. Several experiments were conducted by varying the <strong>dataset size, number of epochs, and augmentation techniques</strong>  using TensorFlow's ImageDataGenerator.
+      Hyperparameters such as <strong>learning rate and optimizer</strong> were also tuned.
+      <br><br>
+      The final results showed that the model achieved its best performance at 300 epochs with an accuracy of <strong>0.99</strong>, precision <strong>0.99</strong>, recall <strong>0.99</strong>, and F1-score <strong>0.99</strong>.
+    </p>
+
+    <section class="mt-12">
+        <h2 class="text-2xl font-semibold mb-4">🖼️ Project Documentation</h2>
+        <p class="text-gray-600 mb-6">Here are some screenshots or visualizations related to the process and results of this project.</p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <!-- Example images -->
+            <img src="arsitektur.png" alt="Sample 1" class="rounded-lg cursor-pointer transition-transform transform hover:scale-105" onclick="openModal(this)">
+            <img src="tahapan.png" alt="Sample 2" class="rounded-lg cursor-pointer transition-transform transform hover:scale-105" onclick="openModal(this)">
+            <img src="grafik.png" alt="Sample 2" class="rounded-lg cursor-pointer transition-transform transform hover:scale-105" onclick="openModal(this)">
+            <img src="confusionmatrix.png" alt="Sample 2" class="rounded-lg cursor-pointer transition-transform transform hover:scale-105" onclick="openModal(this)">
+            <img src="nilai.png" alt="Sample 2" class="rounded-lg cursor-pointer transition-transform transform hover:scale-105" onclick="openModal(this)">
+        </div>
+    </section>
+    
+
+    <!-- Modal -->
+    <div id="imgModal" class="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center hidden z-50" onclick="closeModal()">
+        <img id="modalImage" class="max-w-full max-h-full rounded-lg border-4 border-white">
+    </div>
+    <a href="index2.html" class="inline-block mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">Back to Portfolio</a>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+      function openModal(img) {
+        const modal = document.getElementById("imgModal");
+        const modalImg = document.getElementById("modalImage");
+        modalImg.src = img.src;
+        modal.classList.remove("hidden");
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("imgModal");
+        modal.classList.add("hidden");
+      }
+  </script>
+</body>
+</html>
